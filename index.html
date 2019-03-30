@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head>
 	<meta charset="UTF-8">
 	<title>Filmes que já assisti</title>
 	
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+	<script src="./js/app.module.js"></script>
+	<script src="./js/app.controller.js"></script>
 
 </head>
 <body>
-	<div class="container">
-		<h1>Filmes que já assisti</h1>
-		
+	<div class="container" ng-controller="AppController as vm">
+		<h1>{{ vm.title }}</h1>
+				
 		<div class="lista-filmes">
 			<div class="filme com-cartaz">
 				<h1>Deadpool</h1>
