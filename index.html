@@ -14,16 +14,16 @@
 	<div class="container" ng-controller="AppController as vm">
 		<h1>{{ vm.title }}</h1>
 				
-		<div class="lista-filmes">
+		<div class="lista-filmes" ng-repeat="filme in vm.filmes">
 			<div class="filme com-cartaz">
-				<h1>Deadpool</h1>
-				<button class="del" title="Excluir"></button>
-				<img src="https://m.media-amazon.com/images/M/MV5BYzE5MjY1ZDgtMTkyNC00MTMyLThhMjAtZGI5OTE1NzFlZGJjXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg" alt="Cartaz de Deadpool">
+				<h1> {{ filme.titulo }} </h1>
+				<button class="del" title="Excluir" ng-click="vm.excluir($index)"></button>
+				<img src="{{ filme.linkCapa }}" alt="Cartaz de {{ filme.titulo }}">
 				<ul>
-					<li><strong>Ano:</strong> 2016</li>
-					<li><strong>Produtora:</strong> Fox</li>
+					<li><strong>Ano:</strong> {{filme.ano}}</li>
+					<li><strong>Produtora:</strong> {{filme.produtora}}</li>
 				</ul>
-				<p>Baseado no anti-herói não convencional da Marvel Comics, Deadpool conta a história da origem do ex-agente das Forças Especiais que se tornou o mercenário Wade Wilson. Depois de ser submetido a um desonesto experimento que o deixa com poderes de cura acelerada, Wade adota o alter ego de Deadpool. Armado com suas novas habilidades e um senso de humor negro e distorcido, Deadpool persegue o homem que quase destruiu sua vida.</p>
+				<p>{{ filme.resumo }}</p>
 			</div>	
 		</div>
 
